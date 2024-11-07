@@ -52,6 +52,13 @@ object A : BuildType({
         snapshot(C) {
         }
     }
+
+    params {
+        param("teamcity.build.chain.skipTags", "linux")     
+    }
+
+
+
 })
 
 object B : BuildType({
@@ -75,6 +82,8 @@ object C : BuildType({
     params {
         param("par1", "1")
         param("par2", "2")
+        param("teamcity.configuration.tags", "linux")
+        
     }
 
     vcs {
