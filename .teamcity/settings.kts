@@ -29,6 +29,7 @@ project {
 
     buildType(D)
     buildType(C)
+    buildType(E)
     buildType(B)
     buildType(A)
 }
@@ -92,6 +93,26 @@ object C : BuildType({
 
 object D : BuildType({
     name = "D"
+
+    params {
+        param("par1", "1")
+        param("par2", "2")
+    }
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+        script {
+            id = "simpleRunner"
+            scriptContent = "sleep 10"
+        }
+    }
+})
+
+object E : BuildType({
+    name = "E"
 
     params {
         param("par1", "1")
