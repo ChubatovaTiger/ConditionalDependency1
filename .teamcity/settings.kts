@@ -54,7 +54,7 @@ object A : BuildType({
     }
 
     params {
-        param("teamcity.build.chain.skipTags", "linux")     
+        //param("teamcity.build.chain.skipTags", "linux")     
     }
 
 
