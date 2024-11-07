@@ -140,6 +140,11 @@ object E : BuildType({
             scriptContent = "sleep 10"
         }
     }
+
+    dependencies {
+        snapshot(G) {
+        }
+    }
 })
 
 object G : BuildType({
