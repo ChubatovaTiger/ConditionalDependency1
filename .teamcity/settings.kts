@@ -103,6 +103,7 @@ object D : BuildType({
     params {
         param("par1", "1")
         param("par2", "2")
+        param("teamcity.configuration.tags", "1,2,3,4")
     }
 
     vcs {
