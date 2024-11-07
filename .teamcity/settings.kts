@@ -27,6 +27,7 @@ version = "2024.07"
 
 project {
 
+    buildType(D)
     buildType(C)
     buildType(B)
     buildType(A)
@@ -71,6 +72,26 @@ object B : BuildType({
 
 object C : BuildType({
     name = "C"
+
+    params {
+        param("par1", "1")
+        param("par2", "2")
+    }
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+        script {
+            id = "simpleRunner"
+            scriptContent = "sleep 10"
+        }
+    }
+})
+
+object D : BuildType({
+    name = "D"
 
     params {
         param("par1", "1")
